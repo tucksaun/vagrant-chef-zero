@@ -19,7 +19,7 @@ module VagrantPlugins
         # We want to prefer the vagrant.d path, but for development
         # we want to find any valid path that has chef-zero
         paths = Gem.path
-        vagrant_path = paths.select { |gp| gp.include?('vagrant.d')}.first
+        vagrant_path = paths.select { |gp| gp.include?('vagrant.d')}.first.to_s
         if has_chef_zero_binary?(vagrant_path)
           return find_chef_zero_binary(vagrant_path)
         end
