@@ -106,6 +106,8 @@ module VagrantPlugins
       end
 
       def berkshelf_enabled?(env)
+        return false unless Vagrant::has_plugin?('berkshelf')
+
         env[:machine].config.berkshelf.enabled == true && chef_client?(env)
       end
 
