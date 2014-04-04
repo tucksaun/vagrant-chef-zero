@@ -16,6 +16,7 @@ module VagrantPlugins
           @ui.opts[:target] = 'Chef Zero'
         else
           @ui = ::Vagrant::UI::Colored.new.scope('Chef Zero')
+        end
       end
     end
   end
